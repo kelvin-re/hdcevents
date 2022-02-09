@@ -190,6 +190,10 @@ header{
     padding-left: 0;
 }
 
+#description-container{
+    margin-top: 30px;
+}
+
 #items-list li{
     display: flex;
 }

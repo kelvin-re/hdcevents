@@ -20,13 +20,8 @@ Route::get('/events/create', [EventController::class, 'create'])->middleware('au
 Route::get('/events/{id}', [EventController::class, 'show']);                          // Mostrar
 Route::post('/events', [EventController::class, 'store']);                             // Pegar Dados
 Route::delete('/events/{id}', [EventController::class, 'destroy'])->middleware('auth');// Deletar Dados
-Route::get('/events/edit/{id}', [EventController::class, 'edit'])->middleware('auth');      // Alterar Dados
+Route::get('/events/edit/{id}', [EventController::class, 'edit'])->middleware('auth'); // Alterar Dados
 Route::put('/events/update/{id}', [EventController::class, 'update'])->middleware('auth');
-
-Route::get('/contact', function () {
-    return view('contact');
-});
-
 Route::get('/dashboard', [EventController::class, 'dashboard'])->middleware('auth');
-
 Route::post('/events/join/{id}', [EventController::class, 'joinEvent'])->middleware('auth');
+Route::delete('/events/join/{id}', [EventController::class, 'leaveEvent'])->middleware('auth');

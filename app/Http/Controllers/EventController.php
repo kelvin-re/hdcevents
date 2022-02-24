@@ -119,7 +119,8 @@ class EventController extends Controller
         return view('events.edit', ['event' => $event]);
     }
 
-    public function update(Request $request){
+    public function update(Request $request)
+    {
         $data = $request->all();
 
         // Image Upload
